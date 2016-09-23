@@ -1,0 +1,38 @@
+.result_list {top-margin: 2em}
+
+table {
+    border: 1px solid black;
+}
+
+th {
+    height: 40px;
+    padding: 10px;
+    font-size: 16px;
+    background-color:  #A6004B;
+    color: white;
+}
+
+section p {
+    text-align: center;
+    max-width:320px;
+}
+
+a {
+    color:  #A6004B;
+    font-size: 16px;
+}
+
+img {
+    max-width:100%;
+    height:auto;
+}
+
+.ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+form {
+    margin-bottom: 3em;
+}

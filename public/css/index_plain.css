@@ -1,0 +1,35 @@
+aside h2 {
+    color: #ffffff;
+    text-align: left;
+}
+
+aside h3 {
+    color: #A6004B;
+}
+
+section p {
+    max-width: 320px;
+    text-align: center;
+}
+
+aside {
+    /*    margin: 1em; */
+    background-color: #FC92BD;;
+}
+
+.main_img {
+    max-width:100%;
+    height:auto;
+}
+
+.plant_of_the_month_img {
+    max-width:100%;
+    height:auto;
+    /*    width: 100px;
+        height: 100px; */
+    padding: 1em;
+}
+
+.intro {
+    margin-bottom: 3em;
+}
