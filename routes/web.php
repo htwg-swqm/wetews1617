@@ -19,13 +19,17 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/home', function () {
+    return view('home');
+});
+
 Route::get('/contact', function () {
     return view('contact');
 });
 
-Route::get('/species/{id}', 'SpeciesController@show');
+Route::get('/species/{id}', 'SpeciesController@show')->middleware('auth');
 
-Route::get('/species_search', 'SpeciesController@search');
+Route::get('/species_search', 'SpeciesController@search')->middleware('auth');
 
 /*
  * Old php views
@@ -38,3 +42,10 @@ Route::get('/plants', function () {
 Route::get('/createExamples', function () {
     return view('createExample');
 });
+
+/**
+ * Added for authentication
+ */
+
+Auth::routes();
+

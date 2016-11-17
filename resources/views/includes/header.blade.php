@@ -20,34 +20,59 @@
                         <li><a href="#">Mein Garten</a></li>
                         <li><a href="#">Pflege</a></li>
                     </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle underline" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Einloggen <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a data-toggle="modal" data-target="#myModal" class="btn">Registrieren</a>
-                                </li>
-                                <li role="separator" class="divider"></li>
-                                <li class="dropdown-header">Anmelden</li>
-                                <li>
-                                    <div class="col-md-12">
-                                        <form role="form">
-                                            <div class="form-group">
-                                                <label class="control-label" for="exampleInputEmail1">Email-Adresse</label>
-                                                <input class="form-control" id="exampleInputEmail1" placeholder="Enter email" type="email">
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="control-label" for="exampleInputPassword1">Passwort</label>
-                                                <input class="form-control" id="exampleInputPassword1" placeholder="Password" type="password">
-                                            </div>
-                                            <button type="submit" class="btn btn-default">Anmelden!</button>
-                                        </form>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
-
-                    </ul>
+                    @if (Auth::check())
+                        <ul class="nav navbar-bar navbar-right">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle underline" data-toggle="dropdown" role="button"
+                                   aria-haspopup="true" aria-expanded="true">{{ Auth::user()->name }} <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <form method="POST" action="/logout" accept-charset="UTF-8" name="logout-form" id="logout-form">
+                                    <li>
+                                            {{ csrf_field() }}
+                                            <button type="submit">Log Out</button>
+                                    </li>
+                                    </form>
+                                </ul>
+                            </li>
+                        </ul>
+                    @else
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle underline" data-toggle="dropdown"
+                                   role="button"
+                                   aria-haspopup="true" aria-expanded="true">Einloggen <span
+                                            class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="/register" class="btn">Registrieren</a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+                                    <li class="dropdown-header">Anmelden</li>
+                                    <li>
+                                        <div class="col-md-12">
+                                            <form action="/login" role="form" method="POST">
+                                                {{ csrf_field() }}
+                                                <div class="form-group">
+                                                    <label class="control-label"
+                                                           for="exampleInputEmail1">Email-Adresse</label>
+                                                    <input class="form-control" id="exampleInputEmail1"
+                                                           placeholder="Enter email" type="email" name="email">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label"
+                                                           for="exampleInputPassword1">Passwort</label>
+                                                    <input class="form-control" id="exampleInputPassword1"
+                                                           placeholder="Password" type="password" name="password">
+                                                </div>
+                                                <button type="submit" class="btn btn-default">Anmelden!
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    @endif
                 </div>
             </div>
         </nav>
