@@ -57,8 +57,12 @@ return [
             'host' => env('DB_HOST', 'localhost'),
             'port' => env('DB_PORT', '3306'),
             'database' => env('DB_DATABASE', 'garden'),
+            'username' => env('DB_USERNAME', 'meiglspe'),
+            'password' => env('DB_PASSWORD', 'weteadmin'),
+            /**
+             *            'database' => env('DB_DATABASE', 'garden'),
             'username' => env('DB_USERNAME', 'gardenapp'),
-            'password' => env('DB_PASSWORD', 'M03ghhttwZVkTsI2'),
+            'password' => env('DB_PASSWORD', 'M03ghhttwZVkTsI2'), */
             'charset' => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix' => '',
