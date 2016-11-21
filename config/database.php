@@ -54,11 +54,11 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'host' => env('DB_HOST', ''),
-            'port' => env('DB_PORT', ''),
-            'database' => env('DB_DATABASE', ''),
-            'username' => env('DB_USERNAME', ''),
-            'password' => env('DB_PASSWORD', ''),
+            'host' => env('DB_HOST', 'ete.cxxvatf96jvr.us-west-2.rds.amazonaws.com'),
+            'port' => env('DB_PORT', '3306'),
+            'database' => env('DB_DATABASE', 'garden'),
+            'username' => env('DB_USERNAME', 'meiglspe'),
+            'password' => env('DB_PASSWORD', 'weteadmin'),
             'charset' => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix' => '',
